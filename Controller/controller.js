@@ -47,9 +47,23 @@ exports.FindById = ( req, res ) => {
         }).catch(err => {
             res.status(500).send({message: err});
         })
+    }
+}
+
+exports.update = (req , res ) => {
+    if(!req.body){
+        res.send({ message: "error"})
+    }else{
 
 
-
+        const id = req.params.id;
+        productsDB.findByIdAndUpdate(id, req.body,{useFindAndModify: false}).then(data => {
+            res.send({ message: `data ${id} success updated`});
+        }).catch(err => {
+            res.status(500).send({
+                message: `Data ${id} failed to edit`
+            })
+        })
 
 
     }
