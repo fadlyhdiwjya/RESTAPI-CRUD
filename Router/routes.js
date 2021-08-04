@@ -13,5 +13,8 @@ routes.post('/add-products', Controller.createProducts);
 // Routes Read
 routes.get('/products', Controller.readProducts);
 
+// Routes FindById
+routes.get('/products/:id', Controller.FindById);
+
 
 module.exports = routes;
