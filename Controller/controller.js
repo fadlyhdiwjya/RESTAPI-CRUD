@@ -33,3 +33,24 @@ exports.readProducts = (req , res ) => {
         })
     }
 }
+
+
+exports.FindById = ( req, res ) => {
+    if(!req.body){
+        res.send({message: "error"})
+    }else{
+
+        const id = req.params.id
+
+        productsDB.findById(id).then(data => {
+            res.send(data)
+        }).catch(err => {
+            res.status(500).send({message: err});
+        })
+
+
+
+
+
+    }
+}
