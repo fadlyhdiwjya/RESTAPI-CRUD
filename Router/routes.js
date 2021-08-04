@@ -19,5 +19,8 @@ routes.get('/products/:id', Controller.FindById);
 // Routes Update
 routes.put('/products/update/:id', Controller.update);
 
+// Routes Delete
+routes.delete('/products/delete/:id', Controller.delete);
+
 
 module.exports = routes;
