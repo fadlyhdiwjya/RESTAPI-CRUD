@@ -6,7 +6,12 @@ const Controller = require('../Controller/controller');
 
 
 
-// Routes Read
+// Routes Create
 routes.post('/add-products', Controller.createProducts);
+
+
+// Routes Read
+routes.get('/products', Controller.readProducts);
+
 
 module.exports = routes;
