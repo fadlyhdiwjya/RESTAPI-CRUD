@@ -64,7 +64,18 @@ exports.update = (req , res ) => {
                 message: `Data ${id} failed to edit`
             })
         })
+    }
+}
 
-
+exports.delete = (req , res ) => {
+    if(!req.body){
+        res.send({message: "error"})
+    }else{
+        const id = req.params.id
+        productsDB.findByIdAndDelete(id).then( data => {
+            res.send({ message: `Data ${id} was deleted`});
+        }).catch(err => {
+            res.status(500).send({ message: `Data ${id} failed to deleted`});
+        })
     }
 }
