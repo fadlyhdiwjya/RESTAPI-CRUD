@@ -16,5 +16,8 @@ routes.get('/products', Controller.readProducts);
 // Routes FindById
 routes.get('/products/:id', Controller.FindById);
 
+// Routes Update
+routes.put('/products/update/:id', Controller.update);
+
 
 module.exports = routes;
